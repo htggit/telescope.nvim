@@ -82,7 +82,7 @@ entry_display.create = function(configuration)
         print(vim.inspect(item))
         if type(item) == "table" then
           local s = strings.align_str(entry_display.truncate(item[1], width), width, justify)
-          print(vim.inspect(s) .. "====>" .. item[2])
+          print(vim.inspect(s) .. " ====> " .. (item[2] or ''))
           return s, item[2]
         else
           width = vim.fn.strdisplaywidth(item) + 1
