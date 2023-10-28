@@ -79,15 +79,15 @@ entry_display.create = function(configuration)
           s[2] = vim.api.nvim_win_get_height(status.results_win)
           width = resolve.resolve_width(v.width)(nil, s[1], s[2])
         end
-        print(vim.inspect(item))
+---        print(vim.inspect(item))
         if type(item) == "table" then
           local s = strings.align_str(entry_display.truncate(item[1], width), width, justify)
-          print(vim.inspect(s) .. " ====> " .. (item[2] or ''))
+---          print(vim.inspect(s) .. " ====> " .. (item[2] or ''))
           return s, item[2]
         else
           width = vim.fn.strdisplaywidth(item) + 1
           local s = strings.align_str(entry_display.truncate(item, width), width, justify)
-          print(vim.inspect(s))
+---          print(vim.inspect(s))
           return s
         end
       end)
