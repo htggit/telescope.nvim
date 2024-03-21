@@ -163,14 +163,14 @@ local function validate_layout_config(strategy_name, configuration, values, defa
     if not valid_configuration_keys[k] then
       -- TODO: At some point we'll move to error here,
       --    but it's a bit annoying to just straight up crash everyone's stuff.
-      vim.api.nvim_err_writeln(
-        string.format(
-          "Unsupported layout_config key for the %s strategy: %s\n%s",
-          strategy_name,
-          k,
-          vim.inspect(values)
-        )
-      )
+      -- vim.api.nvim_err_writeln(
+      --   string.format(
+      --     "Unsupported layout_config key for the %s strategy: %s\n%s",
+      --     strategy_name,
+      --     k,
+      --     vim.inspect(values)
+      --   )
+      -- )
     end
 
     result[k] = get_value(k)
